@@ -23,7 +23,6 @@ No modules.
 |------|------|
 | [tfe_team.team](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/team) | resource |
 | [tfe_team_token.team](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/team_token) | resource |
-| [vault_policy.policy](https://registry.terraform.io/providers/hashicorp/vault/latest/docs/resources/policy) | resource |
 | [vault_terraform_cloud_secret_backend.backend](https://registry.terraform.io/providers/hashicorp/vault/latest/docs/resources/terraform_cloud_secret_backend) | resource |
 | [vault_terraform_cloud_secret_role.role](https://registry.terraform.io/providers/hashicorp/vault/latest/docs/resources/terraform_cloud_secret_role) | resource |
 | [tfe_team.team](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/data-sources/team) | data source |
