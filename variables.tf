@@ -1,52 +1,52 @@
 variable "team_name" {
-    type = string
-    description = "TFE Team Name"
+  type        = string
+  description = "TFE Team Name"
 }
 
 variable "organization" {
   description = "TFE Organization"
-  default = "clover"
+  default     = "clover"
 }
 
 variable "secret_role" {
-  type = string
+  type        = string
   description = "TFE Secret Role"
 }
 
 variable "policy_name" {
-  type = string
+  type        = string
   description = "Vault Policy Name"
 }
 
 variable "policy_path" {
-  type = string
+  type        = string
   description = "Vault Policy Path"
 }
 
 variable "backend" {
-  type = string
+  type        = string
   description = "TFE Backend"
 }
 
 variable "address" {
-  type = string
+  type        = string
   description = "Vault Address"
-  
+
 }
 
-variable create_team {
-  type = bool
+variable "create_team" {
+  type        = bool
   description = "Create a new team"
-  default = false
+  default     = false
 }
 
-variable team_visibility {
-  type = string
+variable "team_visibility" {
+  type        = string
   description = "Team Visibility"
-  default = "secret"
+  default     = "secret"
 }
 
-variable organization_access {
+variable "organization_access" {
   type = object({
     manage_modules          = optional(bool, false)
     manage_policies         = optional(bool, false)
@@ -58,5 +58,5 @@ variable organization_access {
     read_projects           = optional(bool, false)
   })
   description = "Organization Access"
-  default = {}
+  default     = {}
 }

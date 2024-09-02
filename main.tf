@@ -1,15 +1,15 @@
 data "tfe_team" "team" {
-  count = var.create_team ? 1 : 0
+  count        = var.create_team ? 1 : 0
   name         = var.team_name
   organization = var.organization
 }
 
 resource "tfe_team" "team" {
-  count = var.create_team ? 1 : 0
+  count        = var.create_team ? 1 : 0
   name         = var.team_name
   organization = var.organization
   visibility   = var.team_visibility
-  dynamic organization_access {
+  dynamic "organization_access" {
     for_each = var.create_team ? ["*"] : []
     content {
       manage_modules          = lookup(var.organization_access, "manage_modules", false)
@@ -60,5 +60,5 @@ resource "vault_terraform_cloud_secret_role" "role" {
 resource "vault_policy" "policy" {
   name   = var.policy_name
   policy = var.policy_path
-  }
+}
 
