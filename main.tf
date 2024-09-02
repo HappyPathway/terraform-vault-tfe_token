@@ -22,16 +22,6 @@ resource "tfe_team" "team" {
       read_projects           = lookup(var.organization_access, "read_projects", false)
     }
   }
-  organization_access {
-    manage_modules          = true
-    manage_policies         = true
-    manage_policy_overrides = true
-    manage_providers        = true
-    manage_vcs_settings     = true
-    manage_workspaces       = true
-    read_workspaces         = true
-    read_projects           = true
-  }
 }
 
 
@@ -56,9 +46,3 @@ resource "vault_terraform_cloud_secret_role" "role" {
   organization = var.organization
   team_id      = local.team.id
 }
-
-resource "vault_policy" "policy" {
-  name   = var.policy_name
-  policy = var.policy_path
-}
-
